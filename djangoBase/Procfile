@@ -1,1 +1,1 @@
-web: python djangoBase/manage.py runserver 0.0.0.0:$PORT --noreload
+web: bin/gunicorn -b 0.0.0.0:$PORT application:djangoBase
