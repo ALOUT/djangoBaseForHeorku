@@ -1,2 +1,1 @@
-web: bin/gunicorn_django --workers=4 --bind=0.0.0.0:$PORT djangoBase/settings.py
-worker: bin/python djangoBase/manage.py celeryd -E -B --loglevel=INFO
+web: python djangoBase/manage.py collectstatic –noinput; python djangoBase/manage.py run_gunicorn -b 0.0.0.0:$PORT
