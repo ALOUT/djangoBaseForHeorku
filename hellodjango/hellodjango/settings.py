@@ -55,11 +55,15 @@ WSGI_APPLICATION = 'hellodjango.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+		  'default': {
+			      'ENGINE': 'django.db.backends.postgresql_psycopg2',
+			          'NAME': 'daf063vpdc9jqf',
+				      'HOST': 'ec2-54-243-49-204.compute-1.amazonaws.com',
+				          'PORT': 5432,
+					      'USER': 'hlgjcudlrhrvtc',
+					          'PASSWORD': 'bx48OfQ7NtKplah-4PNso3pckK'
+						    }
+		  }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
