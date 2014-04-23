@@ -1,1 +1,1 @@
-web: bin/gunicorn_django -b 0.0.0.0:$PORT hellodjango/settings.py
+web: gunicorn_django -b 0.0.0.0:$PORT hellodjango/settings.py
