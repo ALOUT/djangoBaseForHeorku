@@ -2,15 +2,30 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}" />
-		 <script type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}";</script>
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}home/css/home.css" />
+		<script type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}";</script>
+		<script type="text/javascript" src="{{ STATIC_URL }}home/js/processing.js"></script>
 		<title>{{title}}</title>
+
+		<script type="text/javascript">
+			// ロードされた時に実行
+			window.onload = function() {
+			// canvas 要素
+			var canvas = document.getElementsByTagName('canvas')[0];
+			// Processing のソースコード
+			var code = "size(400, 400); noStroke(); fill(255, 0, 0, 255 * 0.5); ellipse(200, 150, 200, 200); fill(0, 255, 0, 255 * 0.5); ellipse(250, 250, 200, 200); fill(0, 0, 155, 255 * 0.5); ellipse(150, 250, 200, 200);";
+			// Processing 関数を呼び出す
+			Processing(canvas, code);
+			};
+		</script>
+
 	</head>
 	<body>
-		<h1>HELLO!! DJANGO!!</h1>
-		<h2>HELLO!! DJANGO!!</h2>
+		<h1>ALOUT drawing JS LABO!</h1>
 		{% for i in data %}
-		{{i}}<br/>
+		<p class=red>{{i}}</p>
 		{% endfor %}
-		<img src="{{ STATIC_URL }}home/img/a.jpg" />
+		<canvas width="500" height="500"></canvas><br>
+		<img src="{{ STATIC_URL }}home/img/a.jpg"  width="30" height="30" />
 	</body>
 </html>
