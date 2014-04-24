@@ -1,5 +1,8 @@
+{% load admin_static %}{% load firstof from future %}<!DOCTYPE html>
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}" />
+		 <script type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}";</script>
 		<title>{{title}}</title>
 	</head>
 	<body>
@@ -8,5 +11,6 @@
 		{% for i in data %}
 		{{i}}<br/>
 		{% endfor %}
+		<img src="{{ STATIC_URL }}home/img/a.jpg" />
 	</body>
 </html>
