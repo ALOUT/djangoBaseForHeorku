@@ -17,5 +17,5 @@ def home(request):
 	root = lambda * x: os.path.join(os.path.abspath(PROJECT_ROOT), *x)
 
 	#return HttpResponse(root('templates/home.html'))
-	template = loader.get_template('home.html')
+	template = loader.get_template('index.html')
 	return HttpResponse(template.render(contexts))
